@@ -1,0 +1,35 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Adeco</a>
+    <ul class="nav navbar-nav">
+      <% if user_signed_in? %>
+        <li class="active">
+          <a href="<%= root_path %>">Home</a>
+        </li>
+        <li>
+          <a href="<%= activities_path %>">Actividades</a>
+        </li>
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrador <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="<%= programs_path %>">Programas de formación</a></li>
+            <li><a href="<%= instructors_path %>">Instructores</a></li>
+            <li><a href="<%= items_path %>">Productos</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>        
+      <% end %>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete  %></li>
+        <% else %>
+        <li><%= link_to "Iniciar sesión", new_user_session_path  %></li>
+        
+      <% end %>
+    </ul>
+  </div>
+</nav>

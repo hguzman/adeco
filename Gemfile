@@ -49,4 +49,4 @@ group :development do
 end
 
 gem 'devise', '~> 4.2'
-
+gem 'annotate', '~> 2.7', '>= 2.7.1'
